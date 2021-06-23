@@ -13,6 +13,10 @@ import {NavbarComponent} from "./components/navbar/navbar.component";
 import {SignUpStepperComponent} from "./components/sign-up-stepper/sign-up-stepper.component";
 import {LoginComponent} from "./components/login/login.component";
 import {BgStepperDirective} from "./components/sign-up-stepper/bg-stepper.directive";
+import {AppRoutingModel} from "./app-routing.module";
+import { HangmanComponent } from './components/hangman/hangman.component';
+import { ChatComponent } from './components/chat/chat.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 var firebaseConfig = {
@@ -31,7 +35,10 @@ var firebaseConfig = {
     NavbarComponent,
     SignUpStepperComponent,
     BgStepperDirective,
-    LoginComponent
+    LoginComponent,
+    HangmanComponent,
+    ChatComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +48,8 @@ var firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule,
     AngularFireAuthModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    AppRoutingModel
   ],
   providers: [],
   bootstrap: [AppComponent]
