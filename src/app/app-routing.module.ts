@@ -4,6 +4,7 @@ import {SignUpStepperComponent} from "./components/sign-up-stepper/sign-up-stepp
 import {LoginComponent} from "./components/login/login.component";
 import {HomeComponent} from "./components/home/home.component";
 
+
 const appRoutes: Routes = [
   {path: '', component: SignUpStepperComponent},
   {path: 'login', component: LoginComponent},

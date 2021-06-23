@@ -5,7 +5,6 @@ import {
   FormGroup,
   FormGroupDirective,
   NgForm,
-  Validator,
   Validators
 } from "@angular/forms";
 import {ErrorStateMatcher} from "@angular/material/core";
@@ -13,7 +12,6 @@ import {ErrorStateMatcher} from "@angular/material/core";
 import {AuthService} from "../../services/auth.service";
 import {User} from "../../models/user.model";
 import {MatStepper} from "@angular/material/stepper";
-import firebase from "firebase";
 
 
 
