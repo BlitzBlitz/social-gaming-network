@@ -1,0 +1,80 @@
+<mat-grid-list [cols]="1" rowHeight="90%">
+  <mat-grid-tile>
+    <mat-horizontal-stepper linear #stepper>
+      <form [formGroup]="signUpForm">
+        <mat-step
+          label="Choose a username"
+          [completed]="signUpForm.controls.email.valid"
+          [stepControl]="signUpForm.controls.email"
+        >
+          <mat-form-field class="example-full-width">
+            <mat-label>Email</mat-label>
+            <input type="text" matInput formControlName='username' [errorStateMatcher]="matcher"
+                   placeholder="Username">
+            <mat-hint>Add a username of your choice</mat-hint>
+            <mat-error *ngIf="signUpForm.controls.email.hasError('required')">
+              Username is <strong>required</strong>
+            </mat-error>
+            <mat-error *ngIf="signUpForm.controls.email.hasError('email')">
+              Invalid email
+            </mat-error>
+            <mat-error *ngIf="signUpForm.controls.email.hasError('emailExist')">
+              Email is <strong>already in use</strong>
+            </mat-error>
+            <mat-error *ngIf="signUpForm.controls.email.hasError('minlength')">
+              Choose a <strong>longer</strong> username
+            </mat-error>
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+
+        </mat-step>
+        <mat-step label="Write a password" [completed]="signUpForm.controls.password.valid"  [stepControl]="signUpForm.controls.password">
+          <mat-form-field class="example-full-width">
+            <mat-label>Password</mat-label>
+            <input type="password" matInput formControlName='password' [errorStateMatcher]="matcher"
+                   placeholder="Password">
+            <mat-hint>Add a password for protection</mat-hint>
+            <mat-error *ngIf="signUpForm.controls.password.hasError('required')">
+              Password is <strong>required</strong>
+            </mat-error>
+            <mat-error *ngIf="signUpForm.controls.password.hasError('pattern')">
+              Upper case, Lower case, number please
+
+            </mat-error>
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperNext>Next</button>
+            <button mat-button matStepperPrevious>Previous</button>
+          </div>
+
+        </mat-step>
+        <mat-step
+            label="Rewrite Password"
+            [completed]="signUpForm.controls.checkPassword.valid"
+            [stepControl]="signUpForm.controls.checkPassword"
+          >
+            <mat-form-field class="example-full-width">
+              <mat-label>Rewrite Password</mat-label>
+              <input type="password" matInput formControlName='checkPassword' [errorStateMatcher]="passMatcher"
+                     placeholder="Password">
+              <mat-hint>Rewrite your password</mat-hint>
+              <mat-error *ngIf="!signUpForm.valid">
+                Password do not match
+              </mat-error>
+            </mat-form-field>
+          <div>
+            <button mat-button matStepperNext>Next</button>
+            <button mat-button matStepperPrevious>Previous</button>
+          </div>
+        </mat-step>
+        <mat-step label="Sign Up and Enjoy">
+          <button mat-raised-button [disabled]="!signUpForm.valid" (click)="onSubmit(stepper)">Enjoy</button>
+        </mat-step>
+      </form>
+
+    </mat-horizontal-stepper>
+
+  </mat-grid-tile>
+</mat-grid-list>

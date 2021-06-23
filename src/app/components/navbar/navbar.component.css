@@ -1,0 +1,27 @@
+mat-toolbar{
+  justify-content: space-between;
+}
+.brand{
+  font-size: 2rem;
+  background-color: #ffb80d;
+  margin-left: -1rem;
+  padding: 1rem;
+  padding-right: 1.5rem;
+  border-top-right-radius: 3rem;
+  color: #f4f4f4;
+}
+button{
+  border-radius: 0!important;
+}
+button:hover{
+  background-color: #e4e4e4!important;
+}
+.bg-whiteFirst{
+  background-color: #d9d9d9!important;
+}
+.bg-whiteSecond{
+  background-color: #c4c4c4!important;
+}
+.purple{
+  color: #673ab7;
+}
