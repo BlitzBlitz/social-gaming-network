@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {AngularFirestore} from "@angular/fire/firestore";
+import {AngularFireDatabase} from "@angular/fire/database";
 
 @Component({
   selector: 'app-home',
@@ -12,4 +14,6 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onPing() {
+  }
 }

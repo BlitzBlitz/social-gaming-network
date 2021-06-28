@@ -17,4 +17,7 @@ export class User{
   set password(value: string) {
     this._password = value;
   }
+  getUserName(): string{
+    return this.email.split('@')[0];
+  }
 }

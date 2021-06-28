@@ -15,12 +15,15 @@ import {LoginComponent} from "./components/login/login.component";
 import {BgStepperDirective} from "./components/sign-up-stepper/bg-stepper.directive";
 import {AppRoutingModel} from "./app-routing.module";
 import { HomeComponent } from './components/home/home.component';
+import {NgChatModule} from "ng-chat";
+import { ChatComponent } from './components/chat/chat.component';
 
 
 
 var firebaseConfig = {
   apiKey: "AIzaSyBgORjxBPYF3FJTKJtGreDBHbdgiNu_K8k",
   authDomain: "social-gaming-network-ce805.firebaseapp.com",
+  databaseURL: "https://social-gaming-network-ce805-default-rtdb.europe-west1.firebasedatabase.app",
   projectId: "social-gaming-network-ce805",
   storageBucket: "social-gaming-network-ce805.appspot.com",
   messagingSenderId: "966497612047",
@@ -36,6 +39,7 @@ var firebaseConfig = {
     BgStepperDirective,
     LoginComponent,
     HomeComponent,
+    ChatComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,7 +50,8 @@ var firebaseConfig = {
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFireStorageModule,
-    AppRoutingModel
+    AppRoutingModel,
+    NgChatModule
 
   ],
   providers: [],
