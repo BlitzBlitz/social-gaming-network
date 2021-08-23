@@ -102,18 +102,7 @@ export class ChatAdapter2Service extends ChatAdapter {
   }
 
   getMessageHistory(destinataryId: any): Observable<Message[]> {
-    let mockedHistory: Array<Message>;
-
-    mockedHistory = [
-      {
-        fromId: 1,
-        toId: 999,
-        message: "Hi there, just type any message bellow to test this Angular module.",
-        dateSent: new Date()
-      }
-    ];
-
-    return of(mockedHistory).pipe(delay(2000));
+    return this.dataService.getMessages('jane');
   }
 
   sendMessage(message: Message): void {
